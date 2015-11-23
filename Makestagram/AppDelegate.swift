@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-    // SEt up the Parse SDK
+    // Set up the Parse SDK
     Parse.setApplicationId("pY36DUAe3H2yGjRuH6Zl1Mkr6Q6HY6BhcB4Tg3Uc", clientKey: "vD1cmd8QmppwZkjeRCFvp2McKjVBHCNuSYY4k266")
     
     PFUser.logInWithUsername("test", password: "test")
@@ -26,6 +26,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     } else {
         print("No logged in user :(")
     }
+    
+    let acl = PFACL()
+    acl.setPublicReadAccess(true)
+    PFACL.setDefaultACL(acl, withAccessForCurrentUser: true)
     
     return true
   }
