@@ -102,16 +102,16 @@
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="constraints">
-                                                    <exclude reference="Lzf-B1-2Jj"/>
-                                                    <exclude reference="Nuc-JB-cg8"/>
-                                                    <exclude reference="X8m-oQ-rxI"/>
-                                                    <exclude reference="Z6Y-0c-LgN"/>
                                                     <exclude reference="Cfc-FS-5IW"/>
                                                     <exclude reference="GNU-ZA-2hg"/>
                                                     <exclude reference="Gmr-7b-5SV"/>
                                                     <exclude reference="U5c-Sj-pJD"/>
                                                     <exclude reference="lDB-Y1-3ey"/>
                                                     <exclude reference="wHF-6O-LJh"/>
+                                                    <exclude reference="Lzf-B1-2Jj"/>
+                                                    <exclude reference="Nuc-JB-cg8"/>
+                                                    <exclude reference="X8m-oQ-rxI"/>
+                                                    <exclude reference="Z6Y-0c-LgN"/>
                                                     <exclude reference="9TY-Gn-klR"/>
                                                 </mask>
                                             </variation>
@@ -161,7 +161,79 @@
                     <view key="view" contentMode="scaleToFill" id="dMB-Df-egl">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" text="" translatesAutoresizingMaskIntoConstraints="NO" id="p9L-qn-eJu">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="86X-wK-Ksf"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dKa-Qw-zYH">
+                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="50" id="2Bh-bI-vRM">
+                                        <rect key="frame" x="0.0" y="28" width="600" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2Bh-bI-vRM" id="ecP-qw-n0w">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="49.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ufr-ls-pwj">
+                                                    <rect key="frame" x="20" y="14" width="472" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="OsK-K4-c4v"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D9X-Sf-Rtj">
+                                                    <rect key="frame" x="540" y="3" width="44" height="44"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="44" id="BXD-eA-cr7"/>
+                                                        <constraint firstAttribute="height" constant="44" id="nEq-LQ-mgr"/>
+                                                    </constraints>
+                                                    <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
+                                                    <state key="normal" title="Button" image="Add"/>
+                                                    <state key="selected" image="Check"/>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Ufr-ls-pwj" secondAttribute="trailing" constant="100" id="62g-8o-nrl"/>
+                                                <constraint firstItem="D9X-Sf-Rtj" firstAttribute="centerY" secondItem="ecP-qw-n0w" secondAttribute="centerY" id="BqL-g5-1h7"/>
+                                                <constraint firstItem="Ufr-ls-pwj" firstAttribute="centerY" secondItem="ecP-qw-n0w" secondAttribute="centerY" id="URM-Ku-nQs"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="D9X-Sf-Rtj" secondAttribute="trailing" constant="8" id="wMp-iu-gtj"/>
+                                                <constraint firstItem="Ufr-ls-pwj" firstAttribute="leading" secondItem="ecP-qw-n0w" secondAttribute="leadingMargin" constant="12" id="xmt-yb-YXO"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="dKa-Qw-zYH" secondAttribute="trailing" id="BRw-Um-gp5"/>
+                            <constraint firstItem="p9L-qn-eJu" firstAttribute="leading" secondItem="dMB-Df-egl" secondAttribute="leading" id="LzT-SL-QwV"/>
+                            <constraint firstItem="p9L-qn-eJu" firstAttribute="top" secondItem="dMB-Df-egl" secondAttribute="top" id="QfC-mP-udK"/>
+                            <constraint firstAttribute="trailing" secondItem="p9L-qn-eJu" secondAttribute="trailing" id="VV1-Ti-nmX"/>
+                            <constraint firstItem="dKa-Qw-zYH" firstAttribute="top" secondItem="p9L-qn-eJu" secondAttribute="bottom" id="b4V-a5-Ygq"/>
+                            <constraint firstItem="dKa-Qw-zYH" firstAttribute="leading" secondItem="dMB-Df-egl" secondAttribute="leadingMargin" id="bCO-rM-HID"/>
+                            <constraint firstItem="dKa-Qw-zYH" firstAttribute="top" secondItem="p9L-qn-eJu" secondAttribute="bottom" constant="65" id="dmv-KY-miM"/>
+                            <constraint firstItem="p9L-qn-eJu" firstAttribute="top" secondItem="WtT-om-AKl" secondAttribute="bottom" id="eP8-Af-mkJ"/>
+                            <constraint firstAttribute="trailing" secondItem="dKa-Qw-zYH" secondAttribute="trailing" id="nQB-Nl-oiM"/>
+                            <constraint firstItem="ep4-iU-WEg" firstAttribute="top" secondItem="dKa-Qw-zYH" secondAttribute="bottom" id="pfU-tc-Fb1"/>
+                            <constraint firstItem="dKa-Qw-zYH" firstAttribute="leading" secondItem="dMB-Df-egl" secondAttribute="leading" id="qni-OG-t6Q"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="QfC-mP-udK"/>
+                                <exclude reference="BRw-Um-gp5"/>
+                                <exclude reference="bCO-rM-HID"/>
+                                <exclude reference="dmv-KY-miM"/>
+                            </mask>
+                        </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="People" id="Dad-dE-Rp5">
                         <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
@@ -213,7 +285,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Add" width="42" height="42"/>
         <image name="Camera" width="40" height="30"/>
+        <image name="Check" width="42" height="42"/>
         <image name="Heart" width="72" height="68"/>
         <image name="Heart-selected" width="72" height="68"/>
         <image name="Home" width="38" height="36"/>
